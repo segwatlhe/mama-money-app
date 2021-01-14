@@ -98,82 +98,82 @@
           <ng-template #celsius>
                       <mat-card *ngIf="showForecast2" class="ga-forecast-card">
                   <mat-tab-group color="primary">
-                    <mat-tab label="{{forecastData2.details[0].date | date : 'mediumDate'}}">
+                    <mat-tab label="{{celsiusForecastData.details[0].date | date : 'mediumDate'}}">
                         <mat-list>
-                          <mat-list-item> <strong>Minimum Temperature</strong> : {{forecastData2.details[0].minTemperature}}
+                          <mat-list-item> <strong>Minimum Temperature</strong> : {{celsiusForecastData.details[0].minTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                            <mat-list-item> <strong>Maximum Temperature</strong> : {{forecastData2.details[0].maxTemperature}}
+                            <mat-list-item> <strong>Maximum Temperature</strong> : {{celsiusForecastData.details[0].maxTemperature}}
                               &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Description</strong> : {{forecastData2.details[0].description}}<span>
+                          <mat-list-item> <strong>Description</strong> : {{celsiusForecastData.details[0].description}}<span>
                                 <img alt="Site Logo"
                                      height="50"
-                                     src="http://openweathermap.org/img/w/{{forecastData2.details[0].icon}}.png"
+                                     src="http://openweathermap.org/img/w/{{celsiusForecastData.details[0].icon}}.png"
                                      width="50">
                                 </span> </mat-list-item>
                            </mat-list>
                    </mat-tab>
-                    <mat-tab label="{{forecastData2.details[1].date | date : 'mediumDate'}}">
+                    <mat-tab label="{{celsiusForecastData.details[1].date | date : 'mediumDate'}}">
                       <mat-list>
-                        <mat-list-item> <strong>Minimum Temperature</strong> : {{forecastData2.details[1].minTemperature}}
+                        <mat-list-item> <strong>Minimum Temperature</strong> : {{celsiusForecastData.details[1].minTemperature}}
                           &deg;C </mat-list-item>
                           <mat-divider></mat-divider>
-                        <mat-list-item> <strong>Maximum Temperature</strong> : {{forecastData2.details[1].maxTemperature}}
+                        <mat-list-item> <strong>Maximum Temperature</strong> : {{celsiusForecastData.details[1].maxTemperature}}
                           &deg;C </mat-list-item>
                           <mat-divider></mat-divider>
-                        <mat-list-item> <strong>Description</strong> : {{forecastData2.details[1].description}}<span>
+                        <mat-list-item> <strong>Description</strong> : {{celsiusForecastData.details[1].description}}<span>
                               <img alt="Site Logo"
                                    height="50"
-                                   src="http://openweathermap.org/img/w/{{forecastData2.details[1].icon}}.png"
+                                   src="http://openweathermap.org/img/w/{{celsiusForecastData.details[1].icon}}.png"
                                    width="50">
                               </span> </mat-list-item>
                          </mat-list>
                           </mat-tab>
-                    <mat-tab label="{{forecastData2.details[2].date | date : 'mediumDate'}}">
+                    <mat-tab label="{{celsiusForecastData.details[2].date | date : 'mediumDate'}}">
                         <mat-list>
-                          <mat-list-item> <strong>Minimum Temperature</strong> : {{forecastData2.details[2].minTemperature}}
+                          <mat-list-item> <strong>Minimum Temperature</strong> : {{celsiusForecastData.details[2].minTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Maximum Temperature</strong> : {{forecastData2.details[2].maxTemperature}}
+                          <mat-list-item> <strong>Maximum Temperature</strong> : {{celsiusForecastData.details[2].maxTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Description</strong> : {{forecastData2.details[2].description}}<span>
+                          <mat-list-item> <strong>Description</strong> : {{celsiusForecastData.details[2].description}}<span>
                                 <img alt="Site Logo"
                                      height="50"
-                                     src="http://openweathermap.org/img/w/{{forecastData2.details[2].icon}}.png"
+                                     src="http://openweathermap.org/img/w/{{celsiusForecastData.details[2].icon}}.png"
                                      width="50">
                                 </span> </mat-list-item>
                            </mat-list>
                     </mat-tab>
-                    <mat-tab label="{{forecastData2.details[3].date | date : 'mediumDate'}}">
+                    <mat-tab label="{{celsiusForecastData.details[3].date | date : 'mediumDate'}}">
                         <mat-list>
-                          <mat-list-item> <strong>Minimum Temperature</strong> : {{forecastData2.details[3].minTemperature}}
+                          <mat-list-item> <strong>Minimum Temperature</strong> : {{celsiusForecastData.details[3].minTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Maximum Temperature</strong> : {{forecastData2.details[3].maxTemperature}}
+                          <mat-list-item> <strong>Maximum Temperature</strong> : {{celsiusForecastData.details[3].maxTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Description</strong> : {{forecastData2.details[3].description}}<span>
+                          <mat-list-item> <strong>Description</strong> : {{celsiusForecastData.details[3].description}}<span>
                                 <img alt="Site Logo"
                                      height="50"
-                                     src="http://openweathermap.org/img/w/{{forecastData2.details[3].icon}}.png"
+                                     src="http://openweathermap.org/img/w/{{celsiusForecastData.details[3].icon}}.png"
                                      width="50">
                                 </span> </mat-list-item>
                            </mat-list>
                     </mat-tab>
-                    <mat-tab label="{{forecastData2.details[4].date | date : 'mediumDate'}}">
+                    <mat-tab label="{{celsiusForecastData.details[4].date | date : 'mediumDate'}}">
                         <mat-list>
-                          <mat-list-item> <strong>Minimum Temperature</strong> : {{forecastData2.details[4].minTemperature}}
+                          <mat-list-item> <strong>Minimum Temperature</strong> : {{celsiusForecastData.details[4].minTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Maximum Temperature</strong> : {{forecastData2.details[4].maxTemperature}}
+                          <mat-list-item> <strong>Maximum Temperature</strong> : {{celsiusForecastData.details[4].maxTemperature}}
                             &deg;C </mat-list-item>
                             <mat-divider></mat-divider>
-                          <mat-list-item> <strong>Description</strong> : {{forecastData2.details[4].description}}<span>
+                          <mat-list-item> <strong>Description</strong> : {{celsiusForecastData.details[4].description}}<span>
                                 <img alt="Site Logo"
                                      height="50"
-                                     src="http://openweathermap.org/img/w/{{forecastData2.details[4].icon}}.png"
+                                     src="http://openweathermap.org/img/w/{{celsiusForecastData.details[4].icon}}.png"
                                      width="50">
                                 </span> </mat-list-item>
                            </mat-list>

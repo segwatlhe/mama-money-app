@@ -1,4 +1,4 @@
-export class WeatherData2{
+export class CelsiusWeatherData{
     public cityName: string;
     public description: string;
     public currentTemperature: number;

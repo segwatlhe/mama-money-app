@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mama-money"
+    }
+  },
+  "defaultProject": "mama-money",
+  "cli": {
+    "analytics": "0962ad7f-7a75-4ed8-a08f-7357c4c028dc"
+  }
 }
