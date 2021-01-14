@@ -24,12 +24,12 @@ export class WeatherModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadCurrentWeather(this.data.capeTownZip);
-    this.loadCurrentWeather2(this.data.capeTownZip);
+    this.getForcastByFarenheit(this.data.capeTownZip);
+    this.getCurrentWeatherByCelsius(this.data.capeTownZip);
     this.changed();
 
     this.interval = setInterval(() => {
-      this.forecastService.LoadCurrentWeather(this.data.capeTownZip).subscribe(
+      this.forecastService.getForcastByFarenheit(this.data.capeTownZip).subscribe(
         data => {
           this.displaySnackBar('Weather App updates every 20 minutes.', 'Close');
         },
@@ -56,8 +56,8 @@ export class WeatherModalComponent implements OnInit {
    * This will subsrcibe from the publisher of the URL
    * from the Forecast service which returns an observable.
    */
-  loadCurrentWeather(capeTownZip: any) {
-    this.forecastService.LoadCurrentWeather(capeTownZip).subscribe(
+  getForcastByFarenheit(capeTownZip: any) {
+    this.forecastService.getForcastByFarenheit(capeTownZip).subscribe(
       res => {
         this.weatherDetails.cityName = res.name;
         this.weatherDetails.description = res.weather[0].description;
@@ -81,8 +81,8 @@ export class WeatherModalComponent implements OnInit {
     );
   }
 
-  loadCurrentWeather2(capeTownZip: any) {
-    this.forecastService.LoadCurrentWeather2(capeTownZip).subscribe(
+  getCurrentWeatherByCelsius(capeTownZip: any) {
+    this.forecastService.getCurrentWeatherByCelsius(capeTownZip).subscribe(
       res => {
         this.weatherDetails.cityName = res.name;
         this.weatherDetails.description = res.weather[0].description;
@@ -103,9 +103,9 @@ export class WeatherModalComponent implements OnInit {
 
   changed() {
     if (this.checked === true) {
-      this.loadCurrentWeather(this.data.capeTownZip);
+      this.getForcastByFarenheit(this.data.capeTownZip);
     } else {
-      this.loadCurrentWeather2(this.data.capeTownZip);
+      this.getCurrentWeatherByCelsius(this.data.capeTownZip);
     }
   }
 

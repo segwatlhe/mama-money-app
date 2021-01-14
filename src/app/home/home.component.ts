@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ForcastService} from '../services/forcast.service';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
-import {WeatherModalComponent} from '../weather-modal/weather-modal.component';
+import {WeatherModalComponent} from '../current-weather-modal/weather-modal.component';
 import {MatDialog} from '@angular/material/dialog';
 import {ForcastWeatherModalComponent} from '../forcast-weather-modal/forcast-weather-modal.component';
 

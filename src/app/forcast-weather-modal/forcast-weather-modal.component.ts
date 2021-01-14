@@ -28,12 +28,12 @@ export class ForcastWeatherModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadForecastWeather(this.data.capeTownZip);
-    this.loadForecastWeather2(this.data.capeTownZip);
+    this.getForecastByFarenheit(this.data.capeTownZip);
+    this.getForcastByCelsius(this.data.capeTownZip);
     this.changed();
 
     this.interval = setInterval(() => {
-      this.forecastService.LoadForecastWeather(this.data.capeTownZip).subscribe(
+      this.forecastService.getForecastByFarenheit(this.data.capeTownZip).subscribe(
         data => {
           this.displaySnackBar('Weather App updates every 20 minutes.', 'Close');
         },
@@ -61,8 +61,8 @@ export class ForcastWeatherModalComponent implements OnInit {
  publisher of the URL from the Forecast service which returns an observable.
 */
   // tslint:disable-next-line:typedef
-  loadForecastWeather(capeTownZip: any) {
-    this.forecastService.LoadForecastWeather(capeTownZip).subscribe(
+  getForecastByFarenheit(capeTownZip: any) {
+    this.forecastService.getForecastByFarenheit(capeTownZip).subscribe(
       res => {
         this.farenheitForecastData = new FarenheitForecastData(); // Instance to store the Data of ForecastModel
         this.farenheitForecastData.name = res.city.name;
@@ -89,8 +89,8 @@ export class ForcastWeatherModalComponent implements OnInit {
     );
   }
 
-  loadForecastWeather2(capeTownZip: any) {
-    this.forecastService.LoadForecastWeather2(capeTownZip).subscribe(
+  getForcastByCelsius(capeTownZip: any) {
+    this.forecastService.getForcastByCelsius(capeTownZip).subscribe(
       res => {
         this.celsiusForecastData = new CelsiusForecastData(); // Instance to store the Data of ForecastModel
         this.celsiusForecastData.name = res.city.name;
@@ -119,9 +119,9 @@ export class ForcastWeatherModalComponent implements OnInit {
 
   changed(){
     if (this.checked === true){
-      this.loadForecastWeather(this.data.capeTownZip);
+      this.getForecastByFarenheit(this.data.capeTownZip);
     }else{
-      this.loadForecastWeather2(this.data.capeTownZip);
+      this.getForcastByCelsius(this.data.capeTownZip);
     }
   }
 
