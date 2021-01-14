@@ -22,6 +22,7 @@ export class ForcastWeatherModalComponent implements OnInit {
   celsiusForecastData: CelsiusForecastData;
   checked = false;
   private interval: number;
+  retry: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               private forecastService: ForcastService, private snackBar: MatSnackBar) {
   }
@@ -37,6 +38,7 @@ export class ForcastWeatherModalComponent implements OnInit {
           this.displaySnackBar('Weather App updates every 20 minutes.', 'Close');
         },
         error => {
+          this.retry = error;
           this.handleError(error);
           this.displaySnackBar('Weather App did not update.', 'Close');
         }
@@ -80,6 +82,7 @@ export class ForcastWeatherModalComponent implements OnInit {
         this.showForecast = true;
       },
       error => {
+        this.retry = error;
         this.handleError(error);
         this.displaySnackBar('Unable to access OpenWeatherMap API.', 'Close');
       }
@@ -107,6 +110,7 @@ export class ForcastWeatherModalComponent implements OnInit {
         this.showForecast2 = true;
       },
       error => {
+        this.retry = error;
         this.handleError(error);
         this.displaySnackBar('Unable to access OpenWeatherMap API.', 'Close');
       }
@@ -140,5 +144,9 @@ export class ForcastWeatherModalComponent implements OnInit {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
+  }
+
+  retryAPI() {
+    this.ngOnInit();
   }
 }

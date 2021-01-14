@@ -110,7 +110,6 @@ export class WeatherModalComponent implements OnInit {
   }
 
   retryAPI() {
-    console.log('retry');
     this.ngOnInit();
   }
 

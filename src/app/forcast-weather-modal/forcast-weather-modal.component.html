@@ -186,7 +186,8 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button *ngIf="retry" color="primary" mat-button (click)="retryAPI()" mat-raised-button>Retry Now</button>
+  <button color="warn" mat-button mat-dialog-close mat-raised-button>Cancel</button>
 </mat-dialog-actions>
 
 
