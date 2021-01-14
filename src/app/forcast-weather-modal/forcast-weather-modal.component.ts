@@ -1,14 +1,12 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {ForecastData} from '../models/ForecastData.model';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ForcastService} from '../services/forcast.service';
-import {ForecastDetails} from '../models/ForecastDetails.model';
 import {throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {CelsiusForecastData} from '../models/CelsiusForecastData.model';
-import {CelsiusForecastDetails} from '../models/CelsiusForecastDetails.model';
-import {FarenheitWeatherData} from '../models/farenheitWeatherData.model';
-import {FarenheitForecastData} from '../models/farenheitForecastData.model';
+import {CelsiusForecastData} from '../models/celsius/CelsiusForecastData.model';
+import {CelsiusForecastDetails} from '../models/celsius/CelsiusForecastDetails.model';
+import {FarenheitForecastData} from '../models/farenheit/farenheitForecastData.model';
+import {FarenheitForecastDetails} from '../models/farenheit/farenheitForecastDetails.model';
 
 @Component({
   selector: 'app-forcast-weather-modal',
@@ -70,7 +68,7 @@ export class ForcastWeatherModalComponent implements OnInit {
         for (let i = 7; i < res.list.length; i = i + 8)// Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
         {
           // Instance of type ForecastDetails and stores the data in it.
-          const details = new ForecastDetails();
+          const details = new FarenheitForecastDetails();
           details.date = res.list[i].dt_txt;
           details.maxTemperature = res.list[i].main.temp_max;
           details.minTemperature = res.list[i].main.temp_min;
