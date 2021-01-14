@@ -7,6 +7,8 @@ import {throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CelsiusForecastData} from '../models/CelsiusForecastData.model';
 import {CelsiusForecastDetails} from '../models/CelsiusForecastDetails.model';
+import {FarenheitWeatherData} from '../models/farenheitWeatherData.model';
+import {FarenheitForecastData} from '../models/farenheitForecastData.model';
 
 @Component({
   selector: 'app-forcast-weather-modal',
@@ -18,7 +20,7 @@ export class ForcastWeatherModalComponent implements OnInit {
   zip: number;
   showForecast = false;
   showForecast2 = false;
-  forecastData: ForecastData;
+  farenheitForecastData: FarenheitForecastData;
   celsiusForecastData: CelsiusForecastData;
   checked = false;
   private interval: number;
@@ -62,8 +64,8 @@ export class ForcastWeatherModalComponent implements OnInit {
   loadForecastWeather(capeTownZip: any) {
     this.forecastService.LoadForecastWeather(capeTownZip).subscribe(
       res => {
-        this.forecastData = new ForecastData(); // Instance to store the Data of ForecastModel
-        this.forecastData.name = res.city.name;
+        this.farenheitForecastData = new FarenheitForecastData(); // Instance to store the Data of ForecastModel
+        this.farenheitForecastData.name = res.city.name;
         // tslint:disable-next-line:max-line-length
         for (let i = 7; i < res.list.length; i = i + 8)// Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
         {
@@ -74,7 +76,7 @@ export class ForcastWeatherModalComponent implements OnInit {
           details.minTemperature = res.list[i].main.temp_min;
           details.description = res.list[i].weather[0].description;
           details.icon = res.list[i].weather[0].icon;
-          this.forecastData.details.push(details); // Pushing the data to the to created object
+          this.farenheitForecastData.details.push(details); // Pushing the data to the to created object
 
         }
         this.showForecast = true;
