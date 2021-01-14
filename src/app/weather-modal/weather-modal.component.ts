@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {WeatherData} from '../models/weatherData.model';
+import {WeatherData} from '../models/currentWeather/weatherData.model';
 import {ForcastService} from '../services/forcast.service';
 import {throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';

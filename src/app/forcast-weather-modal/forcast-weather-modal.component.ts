@@ -3,10 +3,10 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ForcastService} from '../services/forcast.service';
 import {throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {CelsiusForecastData} from '../models/celsius/CelsiusForecastData.model';
-import {CelsiusForecastDetails} from '../models/celsius/CelsiusForecastDetails.model';
-import {FarenheitForecastData} from '../models/farenheit/farenheitForecastData.model';
-import {FarenheitForecastDetails} from '../models/farenheit/farenheitForecastDetails.model';
+import {CelsiusForecastData} from '../models/fiveDayForcast/celsius/CelsiusForecastData.model';
+import {CelsiusForecastDetails} from '../models/fiveDayForcast/celsius/CelsiusForecastDetails.model';
+import {FarenheitForecastData} from '../models/fiveDayForcast/farenheit/farenheitForecastData.model';
+import {FarenheitForecastDetails} from '../models/fiveDayForcast/farenheit/farenheitForecastDetails.model';
 
 @Component({
   selector: 'app-forcast-weather-modal',
