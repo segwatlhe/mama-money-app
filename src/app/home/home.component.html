@@ -1,0 +1,18 @@
+<mat-toolbar [class.dark-theme]="isDark" color="primary">
+  <span>
+      Weather App
+    </span>
+  <span class="example-fill-remaining-space"></span>
+</mat-toolbar>
+&nbsp;
+    <div class="text-center">
+      <div class="ga-margin-1-rem">
+        <button (click)="openWeatherModal({}, true)" class="ga-width-100-per" color="primary" mat-raised-button>Current
+          Weather
+        </button>
+        &nbsp;
+        <button (click)="openfiveDayForcastModal({}, true)" class="ga-width-100-per" color="primary" mat-raised-button>5
+          Day Forcast
+        </button>
+      </div>
+    </div>

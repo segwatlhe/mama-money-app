@@ -1,0 +1,8 @@
+::ng-deep .custom-style {
+  background-color: black;
+  color: white;
+}
+
+::ng-deep snack-bar-container simple-snack-bar .mat-simple-snackbar-action {
+  color: #FFCB05;
+}

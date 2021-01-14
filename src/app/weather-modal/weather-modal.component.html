@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>Weather App</h2>
+
+<mat-dialog-content class="mat-typography">
+  <mat-sidenav-container>
+        <span class="ga-display-inline-block">
+
+                            <mat-slide-toggle
+                              (change)="changed()"
+                              [(ngModel)]="checked" class="example-margin"
+                              color="primary">
+                              {{checked === true ? 'Fahrenheit' : 'Celsius'}}
+                        </mat-slide-toggle>
+
+            <mat-card *ngIf="checked===true;else celsius" class="ga-card">
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item> <strong>City: </strong>{{weatherDetails.cityName}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong> Temparature</strong> : {{weatherDetails.currentTemperature}}
+                          F </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong>Minimum Temperature</strong> : {{weatherDetails.minTemperature}}
+                          F </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong>Maximum Temperature</strong> : {{weatherDetails.maxTemperature}}
+                          F </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong>Description</strong> : {{weatherDetails.description}}<span>
+                            <img alt="Site Logo" height="50"
+                                 src="http://openweathermap.org/img/w/{{weatherDetails.icon}}.png" width="50">
+                            </span>
+                          </mat-list-item>
+                       </mat-list>
+                </mat-card-content>
+              </mat-card>
+          <ng-template #celsius>
+            <mat-card>
+                            <mat-card-content>
+                    <mat-list>
+                        <mat-list-item> <strong>City: </strong>{{weatherDetails.cityName}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong> Temparature</strong> : {{weatherDetails.currentTemperature}}
+                          &deg;C
+                        </mat-list-item>
+                      <mat-divider></mat-divider>
+                        <mat-list-item>
+                          <strong>Minimum Temperature</strong> : {{weatherDetails.minTemperature}}
+                          &deg;C
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong>Maximum Temperature</strong> : {{weatherDetails.maxTemperature}}
+                          &deg;C </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item> <strong>Description</strong> : {{weatherDetails.description}}<span>
+                            <img alt="Site Logo" height="50"
+                                 src="http://openweathermap.org/img/w/{{weatherDetails.icon}}.png" width="50">
+                            </span>
+                          </mat-list-item>
+                       </mat-list>
+                </mat-card-content>
+            </mat-card>
+          </ng-template>
+        </span>
+  </mat-sidenav-container>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button *ngIf="retry" color="primary" mat-button (click)="retryAPI()" mat-raised-button>Retry Now</button>
+  <button color="warn" mat-button mat-dialog-close mat-raised-button>Cancel</button>
+</mat-dialog-actions>
