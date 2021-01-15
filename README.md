@@ -19,4 +19,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 * Learning and understanding about OpenwatherMap was a bit tricky in the begining.
 * I found reading the OpenweatherMap API tricky to read as well in the start.
 * My first attempt at building the was with React. I spent 3-4 trying to build it with React. 
-* Building the app in Angualar was much easier than with React, although I could see why one might pick React over Angular.
+* Building the app in Angualar was much easier than with React, although I could see why one might pick React over Angular. It's looks easy to learn and it is fast.
