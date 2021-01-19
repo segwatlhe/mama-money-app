@@ -13,7 +13,7 @@ import {ForcastWeatherModalComponent} from '../forcast-weather-modal/forcast-wea
 })
 export class HomeComponent implements OnInit {
 
-  zip = 8001;
+  zip = '0268';
   isDark = false;
 
   constructor(private forecastService: ForcastService,
